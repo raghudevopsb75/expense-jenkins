@@ -51,7 +51,7 @@
 
     - name: COpy file
       template:
-        src: job.xml
+        src: test.xml
         dest: /tmp/job.xml
       vars:
         repo_name: expense-terraform
