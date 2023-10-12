@@ -1,3 +1,3 @@
-{% if "{{ auto_trigger }}" == "true" %}
+{% if "{{ auto_trigger }}" = "true" %}
     Hello World
 {% endif %}
