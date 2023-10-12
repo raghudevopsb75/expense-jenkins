@@ -22,7 +22,7 @@
                 </org.jenkinsci.plugins.gwt.GenericTrigger>
             </triggers>
         </org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
-    <properties/>
+    </properties>
     <definition class="org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition" plugin="workflow-cps@3802.vd42b_fcf00b_a_c">
         <scm class="hudson.plugins.git.GitSCM" plugin="git@5.2.0">
             <configVersion>2</configVersion>
