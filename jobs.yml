@@ -48,11 +48,3 @@
       vars:
         repo_name: expense-terraform
         auto_trigger: "false"
-
-    - name: COpy file
-      template:
-        src: test.xml
-        dest: /tmp/job.xml
-      vars:
-        repo_name: expense-terraform
-        auto_trigger: "true"
