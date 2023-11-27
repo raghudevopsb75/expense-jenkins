@@ -113,29 +113,29 @@
     - name: Create Jenkins Job - RoboShop App Components Folder
       community.general.jenkins_job:
         config: "{{ lookup('template', 'folder.xml') }}"
-        name: roboshop
+        name: roboshop-app-ci-pipeline
         password: "{{jenkins_password}}"
         url: http://172.31.94.64:8080
         user: "{{jenkins_user}}"
 
-#    - name: Create Jenkins Job - RoboShop App Components
-#      community.general.jenkins_job:
-#        config: "{{ lookup('template', 'mjob.xml') }}"
-#        name: "{{item}}"
-#        password: "{{jenkins_password}}"
-#        url: "{{jenkins_url}}"
-#        user: "{{jenkins_user}}"
-#      vars:
-#        repo_name: "{{item}}"
-#        auto_trigger: "true"
-#      loop:
-#        - frontend
-#        - catalogue
-#        - cart
-#        - user
-#        - shipping
-#        - payment
-#        - dispatch
+    - name: Create Jenkins Job - RoboShop App Components
+      community.general.jenkins_job:
+        config: "{{ lookup('template', 'mjob.xml') }}"
+        name: roboshop-app-ci-pipeline/"{{item}}"
+        password: "{{jenkins_password}}"
+        url: "{{jenkins_url}}"
+        user: "{{jenkins_user}}"
+      vars:
+        repo_name: "{{item}}"
+        auto_trigger: "true"
+      loop:
+        - frontend
+        - catalogue
+        - cart
+        - user
+        - shipping
+        - payment
+        - dispatch
 
 
 
