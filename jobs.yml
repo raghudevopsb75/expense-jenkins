@@ -110,24 +110,24 @@
         auto_trigger: "false"
         file_name: Jenkinsfile
 
-    - name: Create Jenkins Job - Frontend
+    - name: Create Jenkins Job - RoboShop App Components
       community.general.jenkins_job:
         config: "{{ lookup('template', 'mjob.xml') }}"
-        name: frontend
+        name: "{{item}}"
         password: "{{jenkins_password}}"
         url: "{{jenkins_url}}"
         user: "{{jenkins_user}}"
       vars:
-        repo_name: frontend
+        repo_name: "{{item}}"
         auto_trigger: "true"
+      loop:
+        - frontend
+        - catalogue
+        - cart
+        - user
+        - shipping
+        - payment
+        - dispatch
 
-    - name: Create Jenkins Job - Catalogue
-      community.general.jenkins_job:
-        config: "{{ lookup('template', 'mjob.xml') }}"
-        name: catalogue
-        password: "{{jenkins_password}}"
-        url: "{{jenkins_url}}"
-        user: "{{jenkins_user}}"
-      vars:
-        repo_name: catalogue
-        auto_trigger: "true"
+
+
