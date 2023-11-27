@@ -120,3 +120,14 @@
       vars:
         repo_name: frontend
         auto_trigger: "true"
+
+    - name: Create Jenkins Job - Catalogue
+      community.general.jenkins_job:
+        config: "{{ lookup('template', 'mjob.xml') }}"
+        name: catalogue
+        password: "{{jenkins_password}}"
+        url: "{{jenkins_url}}"
+        user: "{{jenkins_user}}"
+      vars:
+        repo_name: catalogue
+        auto_trigger: "true"
